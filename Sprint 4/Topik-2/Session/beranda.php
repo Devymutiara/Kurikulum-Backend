@@ -36,7 +36,7 @@
             confirm("Anda yakin ingin keluar?");
 
             if (confirm() == true) {
-                window.location.href = "index.php";
+                window.location.href = "logout.php";
             }
         }
     </script>
