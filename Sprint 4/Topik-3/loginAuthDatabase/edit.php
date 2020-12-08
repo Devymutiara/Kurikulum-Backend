@@ -16,7 +16,7 @@ $data = mysqli_query($koneksi, $query);
 </head>
 
 <body>
-    <a href="index.php">KEMBALI</a><br><br>
+    <a href="index.php" style="text-decoration: none">KEMBALI</a><br><br>
     <center>
         <h2>Edit Data</h2>
         <?php while($row = mysqli_fetch_assoc($data)) :?>

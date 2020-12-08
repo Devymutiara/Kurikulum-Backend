@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <a href="index.php">KEMBALI</a><br><br>
+    <a href="index.php" style="text-decoration: none">KEMBALI</a><br><br>
     <center>
         <h2>Tambah Data</h2>
         <br>
