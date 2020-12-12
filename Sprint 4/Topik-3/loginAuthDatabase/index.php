@@ -22,7 +22,7 @@ $data = mysqli_query($koneksi,"SELECT *
 </head>
 
 <body>
-    <a href="logout.php" style="text-decoration: none" onclick="myFunction()">Logout</a>
+    <a href="logout.php" style="text-decoration: none" onclick="return confirm('Anda yakin ingin keluar?')">Logout</a>
     <center>
         <h3><?php echo $_SESSION['username'].", kamu berhasil masuk." ?></h3>
         <h2>Daftar Peminjaman Buku</h2>
@@ -62,15 +62,17 @@ $data = mysqli_query($koneksi,"SELECT *
             <a href="tambah.php" style="text-decoration: none">+ Tambah Data Sewa</a>
         </div>
     </div>
-    <script>
+    <!-- <script>
         function myFunction() {
             confirm("Anda yakin ingin keluar?");
-
             if (confirm() == true) {
                 window.location.href = "logout.php";
-            }
+            } 
+            // else {
+            //     window.location.href = "index.php";
+            // }
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
