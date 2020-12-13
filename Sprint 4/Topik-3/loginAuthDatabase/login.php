@@ -7,9 +7,9 @@ session_start();
 			echo "Anda telah berhasil logout";
 		}	
 	}
-	// if($_SESSION['status'] == 'login') {
-	// 	header("location: index.php");
-	// }
+	if($_SESSION['status'] == 'login') {
+		header("location: index.php");
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
