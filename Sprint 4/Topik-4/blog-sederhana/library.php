@@ -78,7 +78,6 @@ class Login extends Dbh {
         $stmt->execute([$uname, $pass]);
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        var_dump($row);
 
         if($row['jumlah_total'] != "0") {
             $_SESSION['username'] = $uname;
