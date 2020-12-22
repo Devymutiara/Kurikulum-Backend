@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['status'])){
     echo null; //set null agar tidak muncul error
-}else if($_SESSION['status'] == 'admin') {
+} else if($_SESSION['status'] == 'admin') {
     header("location: beranda_admin.php");
 } else if($_SESSION['status'] == 'user') {
     header("location: beranda_user.php");

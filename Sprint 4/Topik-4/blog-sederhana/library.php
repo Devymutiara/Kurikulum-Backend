@@ -73,19 +73,19 @@ class Login extends Dbh {
     }
 
     public function masuk($uname, $pass) {
-        $sql = "SELECT COUNT(*) FROM admin WHERE username = '$uname' and password = '$pass'";
+        $sql = "SELECT COUNT(*) AS jumlah_total FROM admin WHERE username = '$uname' and password = '$pass'";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$uname, $pass]);
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         var_dump($row);
-        if($row > 0) {
+
+        if($row['jumlah_total'] != "0") {
             $_SESSION['username'] = $uname;
             $_SESSION['status'] = "user";
             header("location: beranda_user.php");
         } else {
             header("location: login.php");
-        }
-        
+        }   
     }
 }
