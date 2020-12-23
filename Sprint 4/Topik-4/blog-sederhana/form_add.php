@@ -47,7 +47,7 @@ include 'library.php';
                 </center>
                 <br>
                 <br>
-                <form action="post_process.php" method="POST">
+                <form action="post_process.php" method="POST" enctype="">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Judul</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ketik judul"
@@ -61,6 +61,11 @@ include 'library.php';
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Penulis</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nama Anda"
+                            name="author" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Gambar</label>
+                        <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="Nama Anda"
                             name="author" required>
                     </div>
                     <div class="mb-3">
