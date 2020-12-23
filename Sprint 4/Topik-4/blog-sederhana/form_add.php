@@ -51,20 +51,20 @@ include 'library.php';
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Judul</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ketik judul"
-                            name="title">
+                            name="title" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Konten</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="7"
-                            name="content"></textarea>
+                            name="content" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Penulis</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nama Anda"
-                            name="author">
+                            name="author" required>
                     </div>
                     <div class="mb-3">
-                    <select class="form-select" aria-label="Default select example" name="kategori">
+                    <select class="form-select" aria-label="Default select example" name="kategori" required>
                             <option value="">-- Pilih  Kategori --</option>
                             <option value="6">Privasi</option>
                             <option value="7">Agama</option>
