@@ -53,7 +53,7 @@ if($_SESSION['status']!="admin"){
         <section class="container-fluid">
             <section class="row justify-content-center">
                 <section class="col-12 col-sm-11 col-md-7">
-
+            
                     <?php $posts = new Posts(); ?>
                     <?php if($posts->getPost()) :?>
                     <?php foreach($posts->getPost() as $post) :?>
