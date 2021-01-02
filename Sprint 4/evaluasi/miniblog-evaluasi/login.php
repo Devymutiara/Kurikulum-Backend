@@ -8,12 +8,6 @@
         header("location: user.php");
     }
 
-    if($_GET['logout'] == "yes"){
-        session_unset();
-        header("location: login.php");
-    } else{
-        echo null;
-    }
     
     include 'library.php';
     $login = new Login();

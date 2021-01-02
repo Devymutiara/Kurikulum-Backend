@@ -42,3 +42,7 @@ if(isset($_POST['daftar'])) {
     header("location: login.php?enrolled=selamat");
 } 
 
+if($_GET['logout'] == "yes"){
+    session_destroy();
+    header("location: login.php");
+} 

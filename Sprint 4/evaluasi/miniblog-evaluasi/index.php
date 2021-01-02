@@ -31,7 +31,7 @@ if($_SESSION['status']!="admin"){
             <p class="lead">Tempat untuk menuangkan segala keluh kesah tapi Allahlah sebaik-baik tempat mengeluh</p>
             <a class="btn btn-primary btn-lg" href="formTambah.php" role="button">Nulis</a>
             <a class="btn btn-primary btn-lg" href="#" role="button">Liat profil</a>
-            <a class="btn btn-danger btn-lg" href="login.php?logout=yes" role="button">Keluar</a>
+            <a class="btn btn-danger btn-lg" href="processpos.php?logout=yes" role="button">Keluar</a>
             <br>
             <br>
             <hr class="my-4">
