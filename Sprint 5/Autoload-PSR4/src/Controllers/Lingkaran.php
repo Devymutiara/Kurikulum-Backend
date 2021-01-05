@@ -1,5 +1,5 @@
 <?php
-// namespace Lingkaran;
+namespace App\Controllers;
 
 class Lingkaran {
 
