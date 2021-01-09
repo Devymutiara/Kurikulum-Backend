@@ -1,0 +1,16 @@
+{
+    "name": "evaluasi/autoload",
+    "description": "Untuk bahan evaluasi",
+    "authors": [
+        {
+            "name": "Devymutiara",
+            "email": "namikazepian@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\" : "src/"
+        }
+    }
+}
