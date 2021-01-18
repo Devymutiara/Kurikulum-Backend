@@ -1,7 +1,7 @@
 <?php
-__autoload(function($class) {
-    require_once($class . '.php');
-});
+function __autoload($class){
+    require_once($class .'.php');
+}
 
 $Lingkaran = new Lingkaran;
 $Persegi = new Persegi;
