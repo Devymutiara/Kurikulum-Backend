@@ -10,10 +10,12 @@
                 <a class="nav-link{{ request()->is('/') ? ' active' : '' }}" href="/">Home</a>
                 <a class="nav-link{{ request()->is('about') ? ' active' : '' }}" href="/about">About</a>
                 <a class="nav-link{{ request()->is('contact') ? ' active' : '' }}" href="/contact">Contact</a>
-                <a class="nav-link{{ request()->is('posts') ? ' active' : '' }}" href="/posts">Posts</a>
+                <a class="nav-link{{ request()->is('posts') ? ' active' : '' }}" href="/posts">All posts</a>
+                <a class="nav-link{{ request()->is('authors') ? ' active' : '' }}" href="/authors">Post from authors</a>
+                <a class="nav-link{{ request()->is('identities') ? ' active' : '' }}" href="/identities">Authors profile</a>
             </div>
             <div class="navbar-nav ml-auto">
-                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link" href="/login">Logout</a>
             </div>
         </div>
     </div>

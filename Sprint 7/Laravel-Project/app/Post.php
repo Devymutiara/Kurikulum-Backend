@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Post extends Model
 {
@@ -14,4 +15,11 @@ class Post extends Model
     //     return $this->latest()->first();
     // }
     protected $fillable = ['title', 'slug', 'body'];
+    
+
+    public function author()
+    {
+        return $this->hasMany(Author::class);
+    }
+
 }

@@ -12,9 +12,13 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __invoke()
     {
-        $name = request('name');
-        return view('home', compact('name'));
+        return view('home');
+    }
+
+    public function index()
+    {
+        return view('home');
     }
 }

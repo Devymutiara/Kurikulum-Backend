@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class PostController extends Controller
 {
@@ -19,6 +21,11 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->paginate(6);
+
+        // $posts = DB::table('posts')
+        //     ->join('authors','posts.id','authors.post_id')
+        //     ->paginate(6);
+
         return view('posts.index', compact('posts'));
     }
 
@@ -41,15 +48,21 @@ class PostController extends Controller
         //     'body' => $request->body
         // ]);
 
-        $attr = request()->validate([
-            'title' => 'required|max:30',
-            'body' => 'required'
-            ]);
-            //Assign title to the slug
-        $attr['slug'] = \Str::slug(request('title'));
+        // $attr = request()->validate([
+        //     'title' => 'required|max:30',
+        //     'body' => 'required'
+        //     ]);
+        //     Assign title to the slug
+        // $attr['slug'] = \Str::slug(request('title'));
 
-        //Create new post
-        Post::create($attr);
+        // Create new post
+        // Post::create($attr);
+
+        $post = new Post;
+        $post->title = request('title');
+        $post->slug = \Str::slug(request('title'));
+        $post->body = request('body');
+        $post->save();
 
         session()->flash('success', 'The post was created');
         return redirect()->to('posts');
@@ -57,15 +70,21 @@ class PostController extends Controller
 
     public function update(Post $post)
     {
-        $attr = request()->validate([
-            'title' => 'required|max:30',
-            'body' => 'required'
-            ]);
+        // $attr = request()->validate([
+        //     'title' => 'required|max:30',
+        //     'body' => 'required'
+        //     ]);
 
-            $post->update($attr);
-            session()->flash('success', 'The post was updated');
+        //     $post->update($attr);
 
-            return redirect()->to('posts');
+        // $post = Post::findOrFail($post->slug);
+        $post->title = request('title');
+        $post->body = request('body');
+        $post->save();
+
+        session()->flash('success', 'The post was updated');
+
+        return redirect()->to('posts');
     }
     
     public function destroy(Post $post)

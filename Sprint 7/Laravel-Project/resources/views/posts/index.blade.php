@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <label for="title">Title</label>
                         <input type="text" name="title" id="title"
-                            class="form-control @error('title') is-invalid @enderror">
+                            class="form-control @error('title') is-invalid @enderror" placeholder="Put your title here" value="{{ old('title') }}">
                         @error('title')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -28,7 +28,7 @@
                     <div class="form-group">
                         <label for="body">Body</label>
                         <textarea name="body" id="body"
-                            class="form-control @error('body') is-invalid @enderror"></textarea>
+                            class="form-control @error('body') is-invalid @enderror" placeholder="Type everything you want!">{{ old('body') }}</textarea>
                         @error('body')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -49,8 +49,11 @@
 @if ($posts->count())
 <div class="d-flex justify-content-between">
     <div>
-        <h4><b>All Post</b></h4>
-        <hr class="mb-4">
+        {{-- <h4><b>{{ request()->is('posts') ? 'Posts from'. $posts->post->author->name : 'All Posts' }}</b></h4> --}}
+        <h4><b>
+            {{ isset($authorTitle) ? $authorTitle.$author->name : 'All Posts' }}
+        </b></h4>
+        <hr>
     </div>
     <div>
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
@@ -63,7 +66,7 @@
     <div class="col-md-4">
         <div class="card mb-4">
             <div class="card-header">
-                <b>{{ $post->title }}</b>
+                <h4>{{ $post->title }}</h4>
             </div>
             <div class="card-body">
                 <div>{{ Str::limit($post->body, 100, '~~')  }}</div>
@@ -71,7 +74,8 @@
                 <a href="/posts/{{ $post->slug }}">Read more</a>
             </div>
             <div class="card-footer d-flex justify-content-between">
-                Published on {{ $post->created_at->format("d F, Y") }}
+                Published on {{ Carbon\Carbon::parse($post->created_at)->format('d F, Y') }}
+                {{-- {{ $post->created_at->format("d F, Y") }} --}}
 
                 <form action="/posts/{{ $post->id }}/delete" method="POST" class="d-inline">
                     @csrf

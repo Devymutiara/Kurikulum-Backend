@@ -50,7 +50,7 @@
 
         <div class="d-flex justify-content-between">
             <div>
-                <h3 class="mb-4"><b>{{ $post->title }}</b></h3>
+                <h3 class="mb-3"><b>{{ $post->title }}</b></h3>
             </div>
             <div>
                 <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#exampleModal">
@@ -66,7 +66,12 @@
                     
             </div>
         </div>
-        
+        @foreach ($post->author as $au)
+        <div class="text-dark d-inline">
+            <a href="/authors/{{ $au->id }}" class="tags text-decoration-none ">{{ $au->name}}{{ $loop->last ? '' : ', '}}</a>
+        </div>
+        @endforeach
+        &middot;{{ $post->created_at->format("d F, Y") }}
         <p>{{ $post->body }}</p>
     </div>
     

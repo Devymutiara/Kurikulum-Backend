@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Post::class, function (Faker $faker) {
     return [
-        'title' => $faker->realText(10),
-        'slug' => \Str::slug($faker->realText(15)),
+        'title' => $faker->unique()->realText(10),
+        'slug' => \Str::slug($faker->unique()->realText(15)),
         'body' => $faker->realText(200)
     ];
 });
